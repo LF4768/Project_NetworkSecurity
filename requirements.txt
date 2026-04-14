@@ -9,6 +9,7 @@ pymongo
 pymongo[srv] == 3.12
 certifi
 dataclasses
+pyaml
 
 
 # -e .

@@ -1,0 +1,19 @@
+----------1 DATA INGESTION-----------
+
+1. Data Ingestion Directory
+2. Feature Store File Path
+3. Training File Path
+4. Testing File Path
+5. Train Test Split Ratio
+6. Collection Name
+
+
+---------2 DATA VALIDATION-------------
+
+1. Data Validation Directory
+2. Valid Data Directory
+3. Invalid Data Directory
+4. Valid Train File Path
+5. Invalid Train File Path
+6. Invalid test File Path
+7. Drift Report File Path
