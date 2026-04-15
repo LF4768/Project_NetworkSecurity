@@ -17,3 +17,14 @@
 5. Invalid Train File Path
 6. Invalid test File Path
 7. Drift Report File Path
+
+
+
+
+---------3 DATA TRANSFORMATION-------------
+
+1. Data Transformation Directory
+2. Transformed Train Data
+3. Transformed Test Data
+4. Transformed Object Directory
+5. Preprocessor Object
