@@ -1,0 +1,23 @@
+[2026-04-17 18:39:42,877] 13 root - INFO - Initiate data ingestion
+[2026-04-17 18:39:44,976] 55 root - INFO - Performed train test split on the data
+[2026-04-17 18:39:44,978] 58 root - INFO - Exporting Train and test file path
+[2026-04-17 18:39:45,024] 67 root - INFO - Exported train and test file path
+[2026-04-17 18:39:45,024] 18 root - INFO - Data Ingestion Completed
+[2026-04-17 18:39:45,030] 22 root - INFO - Initiated Data Validation
+[2026-04-17 18:39:45,072] 37 root - INFO - Required number of columns = 2
+[2026-04-17 18:39:45,072] 38 root - INFO - Data frame has columns: 31
+[2026-04-17 18:39:45,072] 37 root - INFO - Required number of columns = 2
+[2026-04-17 18:39:45,072] 38 root - INFO - Data frame has columns: 31
+[2026-04-17 18:39:45,200] 24 root - INFO - Data Validation Completed
+[2026-04-17 18:39:45,200] 26 root - INFO - Initiated Data Transformation
+[2026-04-17 18:39:45,200] 48 root - INFO - Data transformation initiated
+[2026-04-17 18:39:45,217] 37 root - INFO - Entered get_data_transformer_obj method
+[2026-04-17 18:39:45,217] 39 root - INFO - Initialise KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[2026-04-17 18:39:45,226] 52 root - INFO - Entered the save_object method of utils.py
+[2026-04-17 18:39:45,228] 57 root - INFO - Exited the save_object method
+[2026-04-17 18:39:45,229] 30 root - INFO - Data Transformation Complete
+[2026-04-17 18:39:45,229] 33 root - INFO - Initiated Model Traineing
+[2026-04-17 18:40:44,273] 52 root - INFO - Entered the save_object method of utils.py
+[2026-04-17 18:40:44,285] 57 root - INFO - Exited the save_object method
+[2026-04-17 18:40:44,285] 117 root - INFO - Model trainer Artifact: ModelTrainerArtifact(trained_model_file_path='Artifacts\\04_17_2026_18_39_42\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=ClassificationMetricArtifact(f1_score=0.9912023460410557, precision_score=0.9891019172552977, recall_score=0.9933117146331577), test_metric_artifact=ClassificationMetricArtifact(f1_score=0.9742962056303549, precision_score=0.9723127035830619, recall_score=0.9762878168438267))
+[2026-04-17 18:40:44,287] 37 root - INFO - Model Training Complete

@@ -28,3 +28,10 @@
 3. Transformed Test Data
 4. Transformed Object Directory
 5. Preprocessor Object
+
+----------4 MODEL TRAINING-----------------
+
+1. Model Trainer Directory
+2. Trained Model File Path
+3. Expected Accuracy
+4. Model Config File Path
