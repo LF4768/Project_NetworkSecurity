@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 import os
 import sys
+import mlflow
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
@@ -29,6 +30,21 @@ class ModelTrainer:
         except Exception as e:
             raise NetworkSecurityException(e,sys)
         
+
+    def track_mlflow(self,best_model, classification_metric):
+        try:
+            with mlflow.start_run():
+                f1_score = classification_metric.f1_score
+                precision_score = classification_metric.precision_score
+                recall_score = classification_metric.recall_score
+
+                mlflow.log_metric("f1_score", f1_score)
+                mlflow.log_metric("precision_score", precision_score)
+                mlflow.log_metric("recall_score", recall_score)
+                mlflow.sklearn.log_model(best_model, "model")
+        except Exception as e:
+            raise NetworkSecurityException(e,sys)
+    
     def train_model(self,x_train,y_train, x_test, y_test):
         try:
             models = {
@@ -101,6 +117,9 @@ class ModelTrainer:
 
             classification_train_metric = get_classification_score(y_train,y_train_pred)
             classification_test_metric = get_classification_score(y_test,y_test_pred)
+
+            self.track_mlflow(model,classification_train_metric)
+            self.track_mlflow(model,classification_test_metric)
 
             preprocessor = load_object(self.data_transformation_artifact.transformed_object_file_path)
             model_dir_path = os.path.dirname(self.model_trainer_config.trained_model_file_path)
