@@ -10,6 +10,10 @@ import pandas as pd
 import os
 import sys
 import mlflow
+import dagshub
+dagshub.init(repo_owner='LF4768', repo_name='Project_NetworkSecurity', mlflow=True)
+
+
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
@@ -127,6 +131,8 @@ class ModelTrainer:
 
             network_model = NetworkModel(preprocessor=preprocessor, model=model)
             save_object(self.model_trainer_config.trained_model_file_path, network_model)
+
+            save_object("final_models/model.pkl", model)
 
             model_trainer_artifact:ModelTrainerArtifact = ModelTrainerArtifact(
                 trained_model_file_path=self.model_trainer_config.trained_model_file_path,
